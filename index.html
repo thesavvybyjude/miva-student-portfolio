@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Academic Portfolio and Student Management Platform of Favour Adeyemi, Computer Science Undergraduate at MIVA Open University.">
+  <meta name="keywords" content="MIVA Open University, Student Portfolio, Computer Science, Academic Planner, Web Development">
+  <meta name="author" content="Favour Adeyemi">
+  <title>Favour Adeyemi | Academic Portfolio & Student Management</title>
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Site Header & Semantic Navigation
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Favour Adeyemi Portfolio Home">
+        <div class="brand-badge">FA</div>
+        <div class="brand-text">
+          Favour Adeyemi
+          <span>MIVA Open University</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="planner.html" class="nav-link">Academic Planner</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Navigation Actions: Theme Switcher & Mobile Menu Button -->
+      <div class="nav-actions">
+        <button 
+          id="themeToggleBtn" 
+          class="theme-toggle-btn" 
+          type="button" 
+          title="Toggle Light/Dark Theme"
+          aria-label="Toggle Light and Dark Theme"
+        >
+          <span id="themeIcon">&#9790;</span>
+        </button>
+        <button 
+          id="hamburgerBtn" 
+          class="hamburger-btn" 
+          type="button" 
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Content Container
+       ========================================================================= -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="heroHeading">
+      <div class="container hero-grid">
+        
+        <!-- Left: Text & Bio Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            <span>B.Sc. Computer Science • Year 3 (Honours)</span>
+          </div>
+          
+          <h1 class="hero-title" id="heroHeading">
+            Hello, I'm <span class="gradient-text">Favour Adeyemi</span>. Welcome to My Academic Space.
+          </h1>
+
+          <p class="hero-description">
+            Passionate software engineer and dedicated undergraduate scholar at MIVA Open University. 
+            I bridge the gap between rigorous academic foundations and modern web technologies to build impactful, 
+            accessible digital systems for higher education and beyond.
+          </p>
+
+          <div class="hero-cta">
+            <a href="planner.html" class="btn btn-primary">
+              <span>📅 Launch Academic Planner</span>
+            </a>
+            <a href="projects.html" class="btn btn-secondary">
+              <span>💻 View My Projects</span>
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+              <span>✉️ Get in Touch</span>
+            </a>
+          </div>
+
+          <!-- Academic Metrics Overview -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>4.85</h4>
+              <p>Cumulative GPA / 5.0</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Course Completion Rate</p>
+            </div>
+            <div class="stat-item">
+              <h4>12+</h4>
+              <p>Completed Software Labs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Photograph Showcase -->
+        <div class="hero-media">
+          <div class="hero-media-wrapper">
+            <!-- Floating Decorative Badges -->
+            <div class="floating-pill top-right">
+              <span>🏆</span>
+              <span>Dean's List 2024/2025</span>
+            </div>
+
+            <figure class="profile-card">
+              <div class="profile-card-image">
+                <img 
+                  src="assets/images/student-profile.jpg" 
+                  alt="Photograph of Favour Adeyemi, Computer Science Student at MIVA Open University" 
+                  width="600" 
+                  height="600"
+                  loading="eager"
+                >
+              </div>
+              <figcaption style="padding-top: 0.75rem; text-align: center;">
+                <strong style="color: var(--text-main);">Favour Adeyemi</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Faculty of Computing & Information Science</p>
+              </figcaption>
+            </figure>
+
+            <div class="floating-pill bottom-left">
+              <span>🚀</span>
+              <span>Full-Stack Web Architect</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Platform Modules / Academic Feature Highlights -->
+    <section class="section" style="background-color: var(--bg-surface-alt);" aria-labelledby="modulesHeading">
+      <div class="container">
+        
+        <header class="section-header">
+          <span class="section-badge">Platform Overview</span>
+          <h2 id="modulesHeading">Integrated Student Portfolio Hub</h2>
+          <p>
+            Designed to seamlessly blend personal academic records, showcase technical accomplishments, 
+            and streamline day-to-day study workflow in one responsive interface.
+          </p>
+        </header>
+
+        <div class="grid-3">
+          
+          <!-- Card 1: Academic Profile -->
+          <article class="card">
+            <div class="card-icon">🎓</div>
+            <h3 class="card-title">Academic Profile & Achievements</h3>
+            <div class="card-body">
+              <p>
+                In-depth breakdown of my undergraduate educational milestones, technical skillset, career vision, 
+                and semester course performance grades.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Curriculum & Grades</span>
+              <a href="about.html" class="btn btn-sm btn-secondary">Learn More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Technical Projects -->
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3 class="card-title">Featured Software Projects</h3>
+            <div class="card-body">
+              <p>
+                Showcase of responsive web applications, including student record systems, campus engagement platforms, 
+                and digital library repositories.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">3 Production Applications</span>
+              <a href="projects.html" class="btn btn-sm btn-secondary">Browse Projects &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Interactive Academic Planner -->
+          <article class="card">
+            <div class="card-icon">⚡</div>
+            <h3 class="card-title">Interactive Task Planner</h3>
+            <div class="card-body">
+              <p>
+                Interactive client-side task manager powered by JavaScript DOM manipulation. Add course tasks, 
+                set priority levels, track progress, and persist study schedules.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Real-Time Local Storage</span>
+              <a href="planner.html" class="btn btn-sm btn-primary">Open Planner &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quick Call to Action / MIVA University Mission -->
+    <section class="section" aria-labelledby="ctaHeading">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <h2 id="ctaHeading">Driving Academic Excellence Through Technology</h2>
+        <p style="color: var(--text-muted); font-size: 1.15rem; margin-bottom: 2rem;">
+          Whether you're a prospective academic supervisor, peer student, or industry recruiter, 
+          I welcome collaboration, code reviews, and academic inquiries.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="about.html" class="btn btn-primary">Read Full Academic Bio</a>
+          <a href="contact.html" class="btn btn-secondary">Send a Direct Message</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Site Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-badge">FA</div>
+            <div class="brand-text">
+              Favour Adeyemi
+              <span>MIVA Open University</span>
+            </div>
+          </div>
+          <p>
+            Personal Academic Portfolio & Student Management Platform designed and developed in fulfillment of Web Technology requirements.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="planner.html">Academic Planner</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Links</h4>
+          <ul class="footer-links">
+            <li><a href="https://miva.university" target="_blank" rel="noopener noreferrer">MIVA University Portal</a></li>
+            <li><a href="about.html#courseGrades">Semester Transcript</a></li>
+            <li><a href="about.html#multimediaIntro">Audio & Video Intro</a></li>
+            <li><a href="projects.html">Repository Showcase</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Social</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:favour.adeyemi@student.miva.edu.ng">Student Email</a></li>
+            <li><a href="tel:+2348012345678">+234 801 234 5678</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> Favour Adeyemi. All Rights Reserved. | MIVA Open University
+        </div>
+        <div>
+          Designed with Semantic HTML5, CSS3 Grid/Flexbox, and Vanilla JavaScript.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Component for Interactive Previews -->
+  <div id="globalModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <h3 id="modalTitle" style="margin-bottom: 1rem; color: var(--primary-light);">Project Preview</h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Shared JavaScript Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

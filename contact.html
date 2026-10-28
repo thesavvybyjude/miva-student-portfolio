@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Favour Adeyemi - Inquiries, Academic Collaborations, and Student Communication Form.">
+  <meta name="keywords" content="Contact, Favour Adeyemi, MIVA Open University, Inquiries, Student Support">
+  <title>Contact Me | Favour Adeyemi - MIVA Open University</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Favour Adeyemi Portfolio Home">
+        <div class="brand-badge">FA</div>
+        <div class="brand-text">
+          Favour Adeyemi
+          <span>MIVA Open University</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="planner.html" class="nav-link">Academic Planner</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle Light and Dark Theme">
+          <span id="themeIcon">&#9790;</span>
+        </button>
+        <button id="hamburgerBtn" class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+    <div class="container">
+
+      <!-- Section Header -->
+      <header class="section-header">
+        <span class="section-badge">Get in Touch</span>
+        <h1>Contact & Academic Communication</h1>
+        <p>
+          Have questions regarding my coursework, software projects, or academic research? 
+          Send a direct message using the form below, or reach out through verified university communication channels.
+        </p>
+      </header>
+
+      <!-- Contact Layout (Info Card + Form Card) -->
+      <div class="contact-layout">
+        
+        <!-- Left: Direct Channels & Office Info -->
+        <aside class="contact-info-card">
+          <h2 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Student Communication Channels</h2>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 2rem;">
+            I prioritize student inquiries, peer study group invites, and faculty communications promptly during active academic terms.
+          </p>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">✉️</div>
+            <div>
+              <strong style="display: block; font-size: 0.95rem; color: var(--text-main);">Official Student Email</strong>
+              <a href="mailto:favour.adeyemi@student.miva.edu.ng" style="font-size: 0.9rem;">
+                favour.adeyemi@student.miva.edu.ng
+              </a>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0.2rem 0 0 0;">Response time: within 24 hours</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div>
+              <strong style="display: block; font-size: 0.95rem; color: var(--text-main);">Direct Telephone</strong>
+              <a href="tel:+2348012345678" style="font-size: 0.9rem;">
+                +234 801 234 5678
+              </a>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0.2rem 0 0 0;">Available Monday – Friday, 9:00 AM – 5:00 PM (WAT)</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🏛️</div>
+            <div>
+              <strong style="display: block; font-size: 0.95rem; color: var(--text-main);">Institution Campus</strong>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">
+                MIVA Open University<br>
+                Abuja Federal Capital Territory, Nigeria
+              </span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🐙</div>
+            <div>
+              <strong style="display: block; font-size: 0.95rem; color: var(--text-main);">Code Repository</strong>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem;">
+                github.com/favour-adeyemi
+              </a>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0.2rem 0 0 0;">Open source assignments & portfolio builds</p>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right: Contact Form with Strict JS Validation -->
+        <section class="contact-form-card" aria-labelledby="formHeading">
+          <h2 id="formHeading" style="font-size: 1.45rem; margin-bottom: 0.5rem;">Send a Message</h2>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.5rem;">
+            All fields are strictly validated in real-time with JavaScript. Ensure your email is properly formatted and phone contains only digits.
+          </p>
+
+          <!-- Success Alert Box (Rendered dynamically) -->
+          <div id="alertSuccess" class="alert-box alert-success" role="alert">
+            <strong>✅ Thank you!</strong> Your message has been received. Favour Adeyemi will review your note and respond shortly.
+          </div>
+
+          <form id="contactForm" novalidate>
+            
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="contactName">Your Full Name <span style="color: var(--danger-color);">*</span></label>
+              <input 
+                type="text" 
+                id="contactName" 
+                name="name" 
+                class="form-control" 
+                placeholder="e.g., Dr. Amina Bello or John Okafor" 
+                required
+                autocomplete="name"
+              >
+              <div class="invalid-feedback">Full Name cannot be empty.</div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+              <label for="contactEmail">Email Address <span style="color: var(--danger-color);">*</span></label>
+              <input 
+                type="email" 
+                id="contactEmail" 
+                name="email" 
+                class="form-control" 
+                placeholder="e.g., yourname@domain.com" 
+                required
+                autocomplete="email"
+              >
+              <div class="invalid-feedback">Please provide a valid email address.</div>
+            </div>
+
+            <!-- Phone Number (digits only validation) -->
+            <div class="form-group">
+              <label for="contactPhone">Phone Number (Digits Only) <span style="color: var(--danger-color);">*</span></label>
+              <input 
+                type="tel" 
+                id="contactPhone" 
+                name="phone" 
+                class="form-control" 
+                placeholder="e.g., 08012345678 (no spaces or hyphens)" 
+                required
+                autocomplete="tel"
+              >
+              <div class="invalid-feedback">Phone number must contain only digits (between 7 and 15 numbers).</div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="contactMessage">Your Message <span style="color: var(--danger-color);">*</span></label>
+              <textarea 
+                id="contactMessage" 
+                name="message" 
+                rows="5" 
+                class="form-control" 
+                placeholder="Write your academic inquiry, collaboration proposal, or message here..." 
+                required
+              ></textarea>
+              <div class="invalid-feedback">Message cannot be empty (minimum 10 characters).</div>
+            </div>
+
+            <button type="submit" id="contactSubmitBtn" class="btn btn-primary" style="width: 100%;">
+              <span>📨 Submit Message</span>
+            </button>
+
+          </form>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-badge">FA</div>
+            <div class="brand-text">
+              Favour Adeyemi
+              <span>MIVA Open University</span>
+            </div>
+          </div>
+          <p>
+            Personal Academic Portfolio & Student Management Platform designed and developed in fulfillment of Web Technology requirements.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="planner.html">Academic Planner</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Links</h4>
+          <ul class="footer-links">
+            <li><a href="https://miva.university" target="_blank" rel="noopener noreferrer">MIVA University Portal</a></li>
+            <li><a href="about.html#courseGrades">Semester Transcript</a></li>
+            <li><a href="about.html#multimediaIntro">Audio & Video Intro</a></li>
+            <li><a href="projects.html">Repository Showcase</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Social</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:favour.adeyemi@student.miva.edu.ng">Student Email</a></li>
+            <li><a href="tel:+2348012345678">+234 801 234 5678</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> Favour Adeyemi. All Rights Reserved. | MIVA Open University
+        </div>
+        <div>
+          Designed with Semantic HTML5, CSS3 Grid/Flexbox, and Vanilla JavaScript.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Academic Task Planner and Student Study Management Platform for MIVA Open University.">
+  <meta name="keywords" content="Academic Planner, Task Manager, MIVA Open University, Study Schedule, Student Tasks">
+  <title>Academic Planner | Favour Adeyemi - MIVA Open University</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Favour Adeyemi Portfolio Home">
+        <div class="brand-badge">FA</div>
+        <div class="brand-text">
+          Favour Adeyemi
+          <span>MIVA Open University</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="planner.html" class="nav-link active">Academic Planner</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle Light and Dark Theme">
+          <span id="themeIcon">&#9790;</span>
+        </button>
+        <button id="hamburgerBtn" class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+    <div class="container">
+
+      <!-- Section Header -->
+      <header class="section-header">
+        <span class="section-badge">Student Productivity Tool</span>
+        <h1>Interactive Academic Planner</h1>
+        <p>
+          Organize coursework, track lab assignments, set project priorities, and maintain steady academic momentum. 
+          All tasks persist automatically in your browser's local storage.
+        </p>
+      </header>
+
+      <!-- Real-time Statistics Bar -->
+      <div class="planner-stats-bar">
+        
+        <div class="stat-box">
+          <div class="stat-box-icon total">📋</div>
+          <div class="stat-box-info">
+            <h4 id="totalTasksCount">0</h4>
+            <p>Total Registered Tasks</p>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-box-icon pending">⏳</div>
+          <div class="stat-box-info">
+            <h4 id="pendingTasksCount">0</h4>
+            <p>Pending / In Progress</p>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-box-icon completed">✅</div>
+          <div class="stat-box-info">
+            <h4 id="completedTasksCount">0</h4>
+            <p>Completed Tasks</p>
+          </div>
+        </div>
+
+        <div class="stat-box" style="flex-direction: column; align-items: stretch; justify-content: center;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">
+            <span>Academic Velocity</span>
+            <span id="plannerProgressLabel" style="color: var(--primary-light);">0% Completed</span>
+          </div>
+          <div style="width: 100%; height: 8px; background: var(--bg-surface-alt); border-radius: var(--radius-full); overflow: hidden;">
+            <div id="plannerProgressBar" style="height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary-light), var(--success-color)); transition: width 0.4s ease;"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Planner Two-Column Layout: Add Form + Task List -->
+      <div class="planner-layout">
+        
+        <!-- Left Column: Add New Task Form -->
+        <aside class="planner-form-card">
+          <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Add Academic Task</h2>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+            Input your upcoming assignment, exam revision, or project milestone details below:
+          </p>
+
+          <form id="taskForm" novalidate>
+            
+            <!-- Task Title -->
+            <div class="form-group">
+              <label for="taskTitle">Task Title / Description <span style="color: var(--danger-color);">*</span></label>
+              <input 
+                type="text" 
+                id="taskTitle" 
+                class="form-control" 
+                placeholder="e.g., Submit CSC 301 Web Design Project" 
+                required
+              >
+              <div class="invalid-feedback">Task title cannot be empty.</div>
+            </div>
+
+            <!-- Course / Category -->
+            <div class="form-group">
+              <label for="taskCourse">Course Code / Category <span style="color: var(--danger-color);">*</span></label>
+              <input 
+                type="text" 
+                id="taskCourse" 
+                class="form-control" 
+                placeholder="e.g., CSC 301, MTH 202, Final Project" 
+                required
+              >
+              <div class="invalid-feedback">Please specify a course code or subject.</div>
+            </div>
+
+            <!-- Due Date -->
+            <div class="form-group">
+              <label for="taskDueDate">Target Due Date</label>
+              <input 
+                type="date" 
+                id="taskDueDate" 
+                class="form-control"
+              >
+            </div>
+
+            <!-- Priority Level -->
+            <div class="form-group">
+              <label for="taskPriority">Priority Level</label>
+              <select id="taskPriority" class="form-control">
+                <option value="high">🔴 High Priority (Urgent)</option>
+                <option value="medium" selected>🟡 Medium Priority (Normal)</option>
+                <option value="low">🟢 Low Priority (Flexible)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+              <span>➕ Add Task to Planner</span>
+            </button>
+
+          </form>
+
+          <div style="margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color); font-size: 0.82rem; color: var(--text-muted);">
+            💡 <strong>Tip:</strong> Click the checkbox to toggle completion status. Use the trash icon to remove finished items.
+          </div>
+        </aside>
+
+        <!-- Right Column: Interactive Task List -->
+        <section class="tasks-container" aria-labelledby="taskListHeading">
+          
+          <div class="tasks-toolbar">
+            <h2 id="taskListHeading" style="font-size: 1.35rem; margin-bottom: 0;">Academic Worklist</h2>
+            
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+              <div class="task-filter-group" aria-label="Task Status Filters">
+                <button class="task-filter-btn active" data-filter="all">All</button>
+                <button class="task-filter-btn" data-filter="pending">Pending</button>
+                <button class="task-filter-btn" data-filter="completed">Completed</button>
+              </div>
+
+              <button 
+                id="clearCompletedBtn" 
+                class="btn btn-secondary btn-sm" 
+                type="button" 
+                title="Remove all completed tasks"
+              >
+                Clear Completed
+              </button>
+            </div>
+          </div>
+
+          <!-- Empty State Placeholder -->
+          <div id="emptyState" class="empty-task-state" style="display: none;">
+            <div class="empty-task-icon">🎉</div>
+            <h3>No Tasks Found</h3>
+            <p>You have no tasks matching the selected filter. Add a new task using the form on the left!</p>
+          </div>
+
+          <!-- Dynamic Task List Generated via JavaScript -->
+          <ul id="taskList" class="task-list" aria-live="polite">
+            <!-- Populated dynamically by planner.js -->
+          </ul>
+
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-badge">FA</div>
+            <div class="brand-text">
+              Favour Adeyemi
+              <span>MIVA Open University</span>
+            </div>
+          </div>
+          <p>
+            Personal Academic Portfolio & Student Management Platform designed and developed in fulfillment of Web Technology requirements.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="planner.html">Academic Planner</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Links</h4>
+          <ul class="footer-links">
+            <li><a href="https://miva.university" target="_blank" rel="noopener noreferrer">MIVA University Portal</a></li>
+            <li><a href="about.html#courseGrades">Semester Transcript</a></li>
+            <li><a href="about.html#multimediaIntro">Audio & Video Intro</a></li>
+            <li><a href="projects.html">Repository Showcase</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Social</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:favour.adeyemi@student.miva.edu.ng">Student Email</a></li>
+            <li><a href="tel:+2348012345678">+234 801 234 5678</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> Favour Adeyemi. All Rights Reserved. | MIVA Open University
+        </div>
+        <div>
+          Designed with Semantic HTML5, CSS3 Grid/Flexbox, and Vanilla JavaScript.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/planner.js"></script>
+</body>
+</html>
