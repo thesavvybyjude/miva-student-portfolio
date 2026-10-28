@@ -16,8 +16,8 @@ The website is designed for a university student at **MIVA Open University** to 
 ---
 
 ## 🚀 Live Demonstration & Repository Links
-- **Live Hosted URL:** *(e.g., https://favour-adeyemi.github.io/miva-portfolio or Netlify/Vercel URL)*
-- **GitHub Repository URL:** *(Submit the folder/repository containing all source code)*
+- **Live Hosted URL:** [https://thesavvybyjude.github.io/miva-student-portfolio/](https://thesavvybyjude.github.io/miva-student-portfolio/)
+- **GitHub Repository URL:** [https://github.com/thesavvybyjude/miva-student-portfolio](https://github.com/thesavvybyjude/miva-student-portfolio)
 
 ---
 
